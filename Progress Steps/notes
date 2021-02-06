@@ -1,0 +1,5 @@
+Since our width in the progress is in %
+and no. of actives gives the active elemensta 
+and the number circles will always be 4,
+we perform(no. of actives -1 /no. of circles -1 )*100
+and we use ths in our width for the progress bar to move

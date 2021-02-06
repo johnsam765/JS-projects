@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgimg {
+    background: url("https://wallpaperaccess.com/full/31228.jpg") no-repeat center center/cover;
+    /*the above is nothing but cenetr in x and y axis and cover for the background position*/
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1;
+    /*since the img is to be behind the 0%*/
+    filter: blur(30px);
+}
+
+.text-load {
+    font-size: 30px;
+    color: black;
+}

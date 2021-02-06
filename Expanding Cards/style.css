@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+* {
+    box-sizing: border-box;
+    /*Used since if any padding or margin change happens to an element,i doesn't impact the 
+    wdth of it*/
+}
+
+body {
+    font-family: "Muli", sans-serif;
+    margin: 0;
+    height: 100vh;
+    /*ie the entire height of the browser*/
+    overflow: hidden;
+    /*since we don't want a scrollbarto be shown*/
+}
+
+.container {
+    margin: 0 auto;
+    width: 70vw;
+    /*using 90% of the whole size*/
+    display: flex;
+    /* coz weare centering everythng in the middle of the view port ie everythingin body goes in vertical*/
+    /* flex-direction: column; since currenty we don't wantthisproject to bein vertical, wemention it as column */
+    align-items: center;
+    /*used when we mention flex*/
+    justify-content: center;
+    /*bring to the centerof the page*/
+}
+
+.panel {
+    background-size: cover 100%;
+    /*to enlarge the background image with curves*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 50px;
+    color: aliceblue;
+    cursor: pointer;
+    flex: 0.5;
+    /*width of all the elements and this will bechanged for the active class to display the whole content*/
+    margin: 5px;
+    position: relative;
+    /*coz we want to position the h3 inside in a absolute*/
+    transition: flex 1s ease-in;
+    /*the above transform will nowapplied to the flexproperty with 0.7 sec and in an ease-in effect*/
+}
+
+.panel h3 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    margin: 0;
+    left: 80px;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.6s;
+    /*0.4s is the delay*/
+}
+
+@media (max-width: 480px)
+/*means any sytles we mentioned here will only applied if the screen is under 480 px*/
+
+{
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-last-of-type(4),
+    .panel:nth-last-of-type(5) {
+        display: none;
+    }
+}
+
+.target {
+    border-radius: 50%;
+    height: 15px;
+    width: 14px;
+    background-color: black;
+    margin-left: 3px;
+    cursor: pointer;
+}

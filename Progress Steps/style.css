@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    /*Used since if any padding or margin change happens to an element,i doesn't impact the 
+    wdth of it*/
+}
+
+body {
+    display: flex;
+    font-family: "Muli", sans-serif;
+    margin: 0;
+    height: 100vh;
+    /*ie the entire height of the browser*/
+    overflow: hidden;
+    /*since we don't want a scrollbarto be shown*/
+    align-items: center;
+    /*used when we mention flex*/
+    justify-content: center;
+    /*bring to the centerof the page*/
+    background-color: #f6f7fb;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    /*since the remaining space wewantit in-between each element*/
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    content: "";
+    /*must use when before and after is used*/
+    background-color: var(--line-border-empty);
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 50%;
+    /*place theline in the middle of the height*/
+    transform: translateY(-50%);
+    /*place the linein the middle of the elements*/
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    height: 4px;
+    width: 0%;
+    /*startingpoint*/
+    top: 50%;
+    /*place theline in the middle of the height*/
+    transform: translateY(-50%);
+    /*place the linein the middle of the elements*/
+    z-index: -1;
+    transition: 00.4s ease;
+}
+
+.circles {
+    background-color: aliceblue;
+    /* color: #999999; */
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+}
+
+.circles.active {
+    border-color: var(--line-border-fill);
+    color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
