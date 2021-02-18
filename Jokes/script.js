@@ -1,6 +1,5 @@
 const jokeId = document.getElementById("jk-id")
 const but = document.getElementById("btn")
-
 but.addEventListener("click", generateJoke)
 generateJoke()
     // function generateJoke() {
